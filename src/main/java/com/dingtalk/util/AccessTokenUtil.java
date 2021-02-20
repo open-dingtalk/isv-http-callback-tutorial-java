@@ -5,6 +5,7 @@ import com.dingtalk.api.request.OapiServiceGetCorpTokenRequest;
 import com.dingtalk.api.response.OapiServiceGetCorpTokenResponse;
 import com.dingtalk.constant.AppConstant;
 import com.dingtalk.constant.UrlConstant;
+import com.dingtalk.service.CallbackManager;
 import com.taobao.api.ApiException;
 import org.springframework.stereotype.Component;
 
@@ -13,8 +14,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class AccessTokenUtil {
-
-    private static String suiteTicket = "";
 
     /**
      * 获取企业授权凭证
@@ -28,12 +27,8 @@ public class AccessTokenUtil {
         OapiServiceGetCorpTokenRequest req = new OapiServiceGetCorpTokenRequest();
         req.setAuthCorpid(authCorpId);
         OapiServiceGetCorpTokenResponse rsp = client.execute(
-            req, AppConstant.SUITE_KEY, AppConstant.SUITE_SECRET, suiteTicket);
+            req, AppConstant.SUITE_KEY, AppConstant.SUITE_SECRET, CallbackManager.getSuiteTicket());
 
         return rsp.getAccessToken();
-    }
-
-    public static void setSuiteTicket(String suiteTicket) {
-        AccessTokenUtil.suiteTicket = suiteTicket;
     }
 }

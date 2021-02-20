@@ -17,4 +17,12 @@ public class UrlConstant {
      * 根据用户id获取用户详情 url
      */
     public static final String USER_GET_URL = "https://oapi.dingtalk.com/topapi/v2/user/get";
+    /**
+     * 获取授权信息 url
+     */
+    public static final String GET_AUTH_INFO = "https://oapi.dingtalk.com/service/get_auth_info";
+    /**
+     * 发送工作通知 url
+     */
+    public static final String CONVERSATION_SEND_URL = "https://oapi.dingtalk.com/topapi/message/corpconversation/asyncsend_v2";
 }
