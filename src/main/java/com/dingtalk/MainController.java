@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 钉钉第三方应用Demo, 实现了HTTP回调及身份验证（免登）功能
+ * 钉钉第三方应用DEMO, 实现了HTTP回调及身份验证（免登）功能
  */
 @RestController
 public class MainController {
